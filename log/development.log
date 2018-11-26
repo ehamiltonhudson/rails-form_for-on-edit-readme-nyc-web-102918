@@ -761,3 +761,132 @@ Processing by PostsController#edit as HTML
   [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 4]]
   Rendered posts/edit.html.erb within layouts/application (16.0ms)
 Completed 200 OK in 347ms (Views: 318.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2018-11-25 23:36:36 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/hamiltonhudson/.rvm/gems/ruby-2.5.3/gems/railties-4.2.10/lib/rails/templates/rails/welcome/index.html.erb (1.1ms)
+Completed 200 OK in 27ms (Views: 13.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/posts/new" for ::1 at 2018-11-25 23:36:43 -0500
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 357ms (Views: 348.6ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/posts" for ::1 at 2018-11-25 23:36:55 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oLC3EW9GWzNk1F1Wkv+mi0XQFmOnHUF3z2AKLCROyTLqVAWqU8ah8gRUv8NJQEGyPeSwQ7ZDe+MvgMJocT8DtA==", "title"=>"hamster post", "description"=>"FORM_FOR", "commit"=>"Submit Post"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hamster post"], ["description", "FORM_FOR"], ["created_at", "2018-11-26 04:36:55.262136"], ["updated_at", "2018-11-26 04:36:55.262136"]]
+  [1m[35m (2.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 8ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/5" for ::1 at 2018-11-25 23:36:55 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 65ms (Views: 58.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/5/edit" for ::1 at 2018-11-25 23:36:59 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/edit.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 52ms (Views: 50.6ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/5" for ::1 at 2018-11-25 23:37:16 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zhOLz8Xqnsn2m8z/t9WUXSWVILHGSiA0T/MQ30de5qyE9zl0+WpkCJYbLmpsanNkXaGGkdcUGqCvE9ibEi8sKg==", "post"=>{"title"=>"hamster post", "description"=>"FORM_FOR HAMSTERS"}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", nil], ["description", nil], ["updated_at", "2018-11-26 04:37:16.888934"], ["id", 5]]
+  [1m[35m (2.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 8ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/posts/5" for ::1 at 2018-11-25 23:37:16 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 34ms (Views: 33.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/5/edit" for ::1 at 2018-11-25 23:39:27 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.2ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 36ms (Views: 28.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/posts/5/" for ::1 at 2018-11-25 23:39:32 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/posts/5/edit" for ::1 at 2018-11-25 23:39:36 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.4ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/posts/5" for ::1 at 2018-11-25 23:39:45 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mjmbyt+v1+nFl0wYffkKzzZTaob5RlxjxjXgBGLEuBnQ3Slx4y8tKKUXro2mRu32TmfMpugYZvcm1ShAN7Vynw==", "post"=>{"title"=>"wtf if wrong", "description"=>"this shit dont work"}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[36mPost Load (0.1ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "posts" SET "title" = ?, "description" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["title", "wtf if wrong"], ["description", "this shit dont work"], ["updated_at", "2018-11-26 04:39:45.755317"], ["id", 5]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 5ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/posts/5" for ::1 at 2018-11-25 23:39:45 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1mSELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/posts/5/edit" for ::1 at 2018-11-25 23:39:50 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/edit.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 41ms (Views: 39.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/posts/5" for ::1 at 2018-11-25 23:40:02 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ily80ZWm0JvZa+lO+eqe0UnmZMSrtOZvFay2AL47+nzAuA5qqSYqWrnrC9siVXnoMdLC5Lrq3Pv1TH5E60ow+g==", "post"=>{"title"=>"wtf is wrong", "description"=>"this shit dont work"}, "commit"=>"Update Post", "id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "posts" SET "title" = ?, "updated_at" = ? WHERE "posts"."id" = ?  [["title", "wtf is wrong"], ["updated_at", "2018-11-26 04:40:03.181742"], ["id", 5]]
+  [1m[36m (2.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 22ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/posts/5" for ::1 at 2018-11-25 23:40:03 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mPost Load (0.1ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 5]]
+  Rendered posts/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 221ms (Views: 220.0ms | ActiveRecord: 0.1ms)
